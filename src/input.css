@@ -1,0 +1,18 @@
+@config "./tailwind.site.config.js";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+button{
+    @apply p-4 rounded-md shadow-md;
+}
+
+.btn-sinals{
+    @apply p-4 rounded-md shadow-md;
+}
+
+button:hover{
+    @apply bg-white;
+}
