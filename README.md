@@ -1,5 +1,7 @@
 # calculator.js
 # Calculator JS
+![image](https://github.com/user-attachments/assets/2a98c8e8-5924-41e0-9c3c-485f08846dd0)
+
 
 Este é um projeto de uma calculadora simples construída com **HTML**, **CSS** (Tailwind CSS) e **JavaScript**.
 
