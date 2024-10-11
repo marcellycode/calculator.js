@@ -16,7 +16,7 @@ function mensage(e) {
         
         
         if (!action) {
-            display.innerText = displayedNum === '0' ? keyContent : displayedNum + keyContent;
+            display.innerText = displayedNum === firstValue  || displayedNum === '0'  ? keyContent : displayedNum + keyContent ;
         } 
       
        
@@ -24,15 +24,20 @@ function mensage(e) {
             firstValue = displayedNum;
             operator = action; 
             history.innerText = firstValue + ' ' + keyContent; 
-            display.innerText = '0'; 
+            display.innerText = firstValue; 
         }
         
         
         else if (action === 'equal') {
             secondValue = displayedNum;
+
+            if (!firstValue) firstValue = '';
+            if (!secondValue) secondValue = '';
+           
             let result = Calculate(firstValue, operator, secondValue); 
+            if(!result)result = '0'
             display.innerText = result;
-            history.innerText = firstValue + " " + operatorToSymbol(operator) + ' ' + secondValue + ' = ';
+            history.innerText = firstValue + " " + operatorToSymbol(operator) + ' ' + secondValue + ' = ' ;
         }
         
         
@@ -42,7 +47,6 @@ function mensage(e) {
           }
         }
         
-      
         else if (action === 'clear-all') {
             display.innerText = '0'; 
             history.innerText = ''; 
@@ -51,7 +55,6 @@ function mensage(e) {
             secondValue = null;
         }
         
-       
         else if (action === 'clear') {
             display.innerText = displayedNum.slice(0, -1) || '0';
         }
@@ -73,11 +76,12 @@ function operatorToSymbol(action) {
     switch(action) {
         case 'add': return '+';
         case 'subtract': return '-';
-        case 'mult': return '*';
-        case 'divide': return '/';
+        case 'mult': return 'x';
+        case 'divide': return '÷';
         case 'porcen': return '%';
         default: return ''; 
     }
 }
+
 
 keys.addEventListener('click', mensage, true);
