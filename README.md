@@ -1,4 +1,3 @@
-# calculator.js
 # Calculator JS
 
 ![image](https://github.com/user-attachments/assets/47e57806-6ef4-4306-a22a-49e4bdf38b71)
